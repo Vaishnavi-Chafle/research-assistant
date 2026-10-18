@@ -1,0 +1,35 @@
+fastapi
+uvicorn
+langchain-huggingface
+transformers
+torch
+dotenv
+# langchain core
+langchain
+langchain-core
+
+# OpenAI Integration
+langchain-openai
+openai
+
+# Anthropic Integration
+langchain-anthropic
+
+#Google-gimini Integration
+langchain-google-genai
+google-generativeai
+
+# Higgingface Integration
+langchain-huggingface
+transformers
+huggingface-hub
+
+# Environment variable management
+python-dotenv
+
+# ML utilities
+numpy
+scikit-learn
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch

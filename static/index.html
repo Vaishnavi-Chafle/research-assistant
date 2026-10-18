@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Assistant</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>     
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">R</div>
+                <div>
+                    <h2>Research Assistant</h2>
+                    <span>Student Project</span>
+                </div>
+            </div>
+
+            <button class="new-chat" id="new-chat">
+                <span>＋</span> New Chat
+            </button>
+
+            <p class="menu-heading">WORKSPACE</p>
+
+            <button class="side-link active" id="home-link">
+                <span>⌂</span> Home
+            </button>
+
+            <button class="side-link" id="recent-link">
+                <span>◷</span> Recent Chat
+            </button>
+
+            <div class="sidebar-bottom">
+                <div class="project-card">
+                    <div class="project-icon">✦</div>
+                    <div>
+                        <strong>About this project</strong>
+                        <p>Built using FastAPI &amp; TinyLlama</p>
+                    </div>
+                </div>
+                <p class="version">Research Assistant · v1.0</p>
+            </div>
+        </aside>
+
+        <!-- Main section -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="breadcrumb">WORKSPACE / <span>CHAT</span></p>
+                </div>
+                <div class="model-status">
+                    <span class="status-dot"></span>
+                    Local model
+                </div>
+            </header>
+
+            <section class="chat-area" id="chat-area">
+
+                <!-- Welcome screen -->
+                <div class="welcome" id="welcome">
+                    <div class="welcome-icon">✦</div>
+
+                    <p class="eyebrow">YOUR PERSONAL STUDY HELPER</p>
+
+                    <h1>Hey there! What are you<br>
+                        <span>researching today?</span>
+                    </h1>
+
+                    <p class="welcome-description">
+                        Ask a question, explore a new topic, or get help
+                        understanding something difficult.
+                    </p>
+
+                    <div class="suggestion-heading">
+                        <span>TRY ASKING</span>
+                        <span class="small-note">Choose a topic to start</span>
+                    </div>
+
+                    <div class="suggestions">
+                        <button class="suggestion-card"
+                                data-prompt="Explain machine learning in simple words with an example.">
+                            <span class="suggestion-icon purple">⌘</span>
+                            <span>
+                                <strong>Explain a concept</strong>
+                                <small>Break down difficult topics</small>
+                            </span>
+                            <span class="card-arrow">↗</span>
+                        </button>
+
+                        <button class="suggestion-card"
+                                data-prompt="Summarize the important points about artificial intelligence.">
+                            <span class="suggestion-icon blue">≡</span>
+                            <span>
+                                <strong>Summarize a topic</strong>
+                                <small>Understand the main points</small>
+                            </span>
+                            <span class="card-arrow">↗</span>
+                        </button>
+
+                        <button class="suggestion-card"
+                                data-prompt="Explain Python functions with a simple example.">
+                            <span class="suggestion-icon green">&lt;/&gt;</span>
+                            <span>
+                                <strong>Help with Python</strong>
+                                <small>Learn code step by step</small>
+                            </span>
+                            <span class="card-arrow">↗</span>
+                        </button>
+
+                        <button class="suggestion-card"
+                                data-prompt="Suggest five beginner-friendly computer science project ideas.">
+                            <span class="suggestion-icon orange">✎</span>
+                            <span>
+                                <strong>Project ideas</strong>
+                                <small>Find inspiration to build</small>
+                            </span>
+                            <span class="card-arrow">↗</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages appear here -->
+                <div id="messages" aria-live="polite"></div>
+
+            </section>
+
+            <!-- Input section -->
+            <footer class="input-section">
+                <form id="chat-form">
+                    <textarea
+                        id="message"
+                        rows="1"
+                        placeholder="Type your question here..."
+                        required
+                    ></textarea>
+
+                    <div class="input-bottom">
+                        <span class="input-hint">↵ Enter to send · Shift + Enter for new line</span>
+                        <button type="submit" id="send-button" aria-label="Send message">
+                            ↑
+                        </button>
+                    </div>
+                </form>
+
+                <p class="disclaimer">
+                    Responses are AI-generated. Please verify important information.
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
